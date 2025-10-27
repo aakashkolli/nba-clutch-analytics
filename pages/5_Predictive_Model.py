@@ -51,10 +51,19 @@ predictions_df = get_predictions(player_df, selected_season, model, scaler, feat
 if predictions_df.empty:
     st.warning(f"No players in the {selected_season} season had the complete data required for prediction.")
 else:
+    # Apply styling with fallback for deployment
+    try:
+        styled_predictions = predictions_df.head(20).style.format({
+            f'Predicted CPI ({selected_season + 1})': '{:.3f}'
+        }).background_gradient(cmap='Greens', subset=[f'Predicted CPI ({selected_season + 1})'])
+    except ImportError:
+        # Fallback styling without background_gradient if matplotlib is not available
+        styled_predictions = predictions_df.head(20).style.format({
+            f'Predicted CPI ({selected_season + 1})': '{:.3f}'
+        })
+    
     st.dataframe(
-        predictions_df.head(20).style
-            .format({f'Predicted CPI ({selected_season + 1})': '{:.3f}'})
-            .background_gradient(cmap='Greens', subset=[f'Predicted CPI ({selected_season + 1})']),
+        styled_predictions,
         width='stretch',
         hide_index=True
     )

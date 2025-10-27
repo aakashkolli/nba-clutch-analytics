@@ -52,15 +52,22 @@ display_cols = {
 
 top_players_display = top_players[display_cols.keys()].rename(columns=display_cols)
 
+# Apply styling with fallback for deployment
+try:
+    styled_df = top_players_display.style.format({
+        'CPI': '{:.3f}', 
+        'Clutch FG%': '{:.1%}', 
+        'FG% Differential': '{:+.1%}'
+    }).background_gradient(cmap='Greens', subset=['CPI']).background_gradient(cmap='RdYlGn', subset=['FG% Differential'], vmin=-0.1, vmax=0.1).set_properties(**{'text-align': 'left'})
+except ImportError:
+    # Fallback styling without background_gradient if matplotlib is not available
+    styled_df = top_players_display.style.format({
+        'CPI': '{:.3f}', 
+        'Clutch FG%': '{:.1%}', 
+        'FG% Differential': '{:+.1%}'
+    }).set_properties(**{'text-align': 'left'})
+
 st.dataframe(
-    top_players_display.style
-        .format({
-            'CPI': '{:.3f}', 
-            'Clutch FG%': '{:.1%}', 
-            'FG% Differential': '{:+.1%}'
-        })
-        .background_gradient(cmap='Greens', subset=['CPI'])
-        .background_gradient(cmap='RdYlGn', subset=['FG% Differential'], vmin=-0.1, vmax=0.1)
-        .set_properties(**{'text-align': 'left'}),
+    styled_df,
     width='stretch'
 )

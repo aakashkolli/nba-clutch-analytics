@@ -61,9 +61,22 @@ else:
     }
     team_players_display = team_players[display_cols.keys()].rename(columns=display_cols)
 
+    # Apply styling with fallback for deployment
+    try:
+        styled_team_df = team_players_display.style.format({
+            'CPI': '{:.3f}', 
+            'Clutch FG%': '{:.1%}', 
+            'FG% Differential': '{:+.1%}'
+        }).background_gradient(cmap='Greens', subset=['CPI'])
+    except ImportError:
+        # Fallback styling without background_gradient if matplotlib is not available
+        styled_team_df = team_players_display.style.format({
+            'CPI': '{:.3f}', 
+            'Clutch FG%': '{:.1%}', 
+            'FG% Differential': '{:+.1%}'
+        })
+
     st.dataframe(
-        team_players_display.style
-            .format({'CPI': '{:.3f}', 'Clutch FG%': '{:.1%}', 'FG% Differential': '{:+.1%}'})
-            .background_gradient(cmap='Greens', subset=['CPI']),
+        styled_team_df,
         width='stretch'
     )
