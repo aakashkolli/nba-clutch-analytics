@@ -6,7 +6,7 @@ A comprehensive **Streamlit-powered analytics platform** that analyzes NBA playe
 ![Streamlit](https://img.shields.io/badge/streamlit-v1.28+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## 🎯 What is "Clutch" Performance?
+## What is "Clutch" Performance?
 
 **Clutch games** are defined as games decided by **5 points or fewer** - the high-pressure moments where true champions emerge. This dashboard goes beyond traditional box scores to reveal:
 
@@ -15,37 +15,28 @@ A comprehensive **Streamlit-powered analytics platform** that analyzes NBA playe
 - How **team dynamics** change in close games
 - **Predictive insights** for future clutch performance
 
----
 
-## ✨ Key Features
+## Key Features
 
-### 📊 **Multi-Page Analytics Suite**
+### **Multi-Page Analytics Suite**
 
 | Page | Description | Key Insights |
-|------|-------------|--------------|
-| **🏠 Home** | Top 15 clutch players overview | Real-time CPI rankings and trends |
-| **👤 Player Profile** | Individual deep-dive analysis | Clutch vs non-clutch performance comparison |
-| **👥 Team Profile** | Team-level clutch performance | Win rates and top performers in close games |
-| **📊 Player Comparison** | Head-to-head clutch analysis | Side-by-side metrics and differentials |
-| **⚙️ Scenario Simulator** | What-if usage modeling | Impact analysis of increased player usage |
-| **🤖 Predictive Model** | ML-powered future predictions | Next season's top clutch performers |
+||-|--|
+| ** Home** | Top 15 clutch players overview | Real-time CPI rankings and trends |
+| ** Player Profile** | Individual deep-dive analysis | Clutch vs non-clutch performance comparison |
+| ** Team Profile** | Team-level clutch performance | Win rates and top performers in close games |
+| ** Player Comparison** | Head-to-head clutch analysis | Side-by-side metrics and differentials |
+| ** Scenario Simulator** | What-if usage modeling | Impact analysis of increased player usage |
+| ** Predictive Model** | ML-powered future predictions | Next season's top clutch performers |
 
-### 📈 **Advanced Analytics**
+### **Analytics**
 
 - **Clutch Player Index (CPI)**: Proprietary composite metric combining multiple performance indicators
 - **Interactive Visualizations**: Powered by Plotly for dynamic data exploration
 - **Downloadable Reports**: HTML-formatted player analysis reports
 - **Machine Learning**: Ensemble model predicting future clutch performance
 
-### 🎨 **Professional UI/UX**
-
-- **Dark Theme**: NBA-inspired color scheme for better viewing experience
-- **Responsive Design**: Optimized for desktop and tablet viewing
-- **Intuitive Navigation**: Multi-page structure with clear information hierarchy
-
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -76,41 +67,6 @@ A comprehensive **Streamlit-powered analytics platform** that analyzes NBA playe
    ```
 
 5. **Open your browser** to `http://localhost:8501`
-
----
-
-## 📁 Project Structure
-
-```
-nba_project/
-├── 0_Home.py                 # Main dashboard page
-├── pages/                    # Streamlit pages
-│   ├── 1_Player_Profile.py   # Individual player analysis
-│   ├── 2_Team_Profile.py     # Team performance analysis
-│   ├── 3_Player_Comparison.py # Head-to-head comparisons
-│   ├── 4_Scenario_Simulator.py # Usage impact modeling
-│   └── 5_Predictive_Model.py # ML predictions
-├── modules/                  # Core functionality
-│   ├── data_loader.py        # Data processing pipeline
-│   ├── utils.py              # Shared utilities and styling
-│   ├── models.py             # Machine learning models
-│   ├── analytics.py          # Statistical analysis functions
-│   └── visualizations.py     # Plotly chart generators
-├── data/
-│   ├── raw/                  # Original CSV datasets
-│   │   ├── games.csv
-│   │   ├── games_details.csv
-│   │   ├── players.csv
-│   │   ├── ranking.csv
-│   │   └── teams.csv
-│   └── processed/            # Processed analytics-ready data
-│       ├── player_performance.csv
-│       └── team_performance.csv
-├── requirements.txt          # Python dependencies
-└── README.md                # This file
-```
-
----
 
 ## 📊 Data Sources & Methodology
 
@@ -144,16 +100,15 @@ Our proprietary **Clutch Player Index** uses an advanced ensemble approach:
 - **Games-played scaling factor** to account for sample size
 - **Baseline score minimum** to ensure meaningful rankings
 
----
 
-## 🤖 Machine Learning Model
+## Machine Learning Model
 
 ### **Architecture: Advanced Ensemble**
 
 Our predictive model uses a **3-model ensemble** optimized for clutch performance prediction:
 
 | Model | Weight | Purpose |
-|-------|--------|---------|
+|-|--||
 | **Random Forest** | 50% | Non-linear patterns, feature interactions |
 | **Gradient Boosting** | 30% | Sequential learning, bias reduction |
 | **Ridge Regression** | 20% | Linear baseline, regularization |
@@ -173,17 +128,16 @@ Our predictive model uses a **3-model ensemble** optimized for clutch performanc
 - **MAE**: 0.250
 - **RMSE**: 0.316
 
----
 
-## 🔧 Technical Implementation
+## Technical Implementation
 
 ### **Core Technologies**
 
-- **🎛️ Streamlit**: Web application framework
-- **🐼 Pandas**: Data manipulation and analysis
-- **📊 Plotly**: Interactive visualizations
-- **🤖 Scikit-learn**: Machine learning models
-- **🎨 CSS**: Custom dark theme styling
+- **Streamlit**: Web application framework
+- **Pandas**: Data manipulation and analysis
+- **Plotly**: Interactive visualizations
+- **Scikit-learn**: Machine learning models
+- **CSS**: Custom dark theme styling
 
 ### **Key Features**
 
@@ -199,9 +153,9 @@ Our predictive model uses a **3-model ensemble** optimized for clutch performanc
 - **Lazy loading**: On-demand chart generation
 - **Memory management**: Strategic cache clearing
 
----
 
-## 📖 Usage Examples
+
+## Usage Examples
 
 ### **Finding Clutch Performers**
 ```python
@@ -222,39 +176,28 @@ player2_clutch = player_df[player_df['PLAYER_NAME'] == 'Stephen Curry']
 team_clutch_rate = team_df['WIN_PCT_clutch'].sort_values(ascending=False)
 ```
 
----
 
-## 🎯 Key Insights You Can Discover
+
+## Key Insights You Can Discover
 
 ### **Player-Level Analysis**
-- 🏆 **Elite Clutch Performers**: Players who elevate their game under pressure
-- 📉 **Clutch Struggles**: Stars who underperform in high-pressure moments
-- 📊 **Performance Differentials**: How much players improve/decline in clutch time
-- 🎯 **Consistency Metrics**: Who can be relied upon in crucial moments
+- **Elite Clutch Performers**: Players who elevate their game under pressure
+- **Clutch Struggles**: Stars who underperform in high-pressure moments
+- **Performance Differentials**: How much players improve/decline in clutch time
+- **Consistency Metrics**: Who can be relied upon in crucial moments
 
 ### **Team-Level Insights**
-- 🏀 **Clutch Team Rankings**: Which franchises excel in close games
-- 👥 **Role Player Impact**: How bench players perform under pressure
-- 📈 **Season Trends**: Clutch performance evolution throughout seasons
-- 🏆 **Championship Correlation**: Relationship between clutch performance and success
+- **Clutch Team Rankings**: Which franchises excel in close games
+- **Role Player Impact**: How bench players perform under pressure
+- **Season Trends**: Clutch performance evolution throughout seasons
+- **Championship Correlation**: Relationship between clutch performance and success
 
 ### **Predictive Intelligence**
-- 🔮 **Future Stars**: Emerging clutch performers for next season
-- 📊 **Usage Optimization**: How increased responsibility affects performance
-- 🎯 **Draft Insights**: Clutch potential of developing players
-- 📈 **Trade Analysis**: Impact of player movement on clutch performance
+- **Future Stars**: Emerging clutch performers for next season
+- **Usage Optimization**: How increased responsibility affects performance
+- **Draft Insights**: Clutch potential of developing players
+- **Trade Analysis**: Impact of player movement on clutch performance
 
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here are some ways you can help:
-
-- 🐛 **Bug Reports**: Found an issue? Please report it!
-- ✨ **Feature Requests**: Have an idea? We'd love to hear it!
-- 📊 **Data Improvements**: Better datasets or processing methods
-- 🎨 **UI/UX Enhancements**: Design improvements and accessibility
-- 🧪 **Model Improvements**: Advanced analytics or ML techniques
 
 ### **Development Setup**
 ```bash
@@ -271,35 +214,19 @@ streamlit run 0_Home.py
 # Submit a pull request
 ```
 
----
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
 
----
 
-## 🙏 Acknowledgments
+
+## Acknowledgments
 
 - **NBA.com** for providing comprehensive basketball statistics
 - **Streamlit** team for the amazing web framework
 - **Plotly** for powerful visualization capabilities
 - **Basketball analytics community** for inspiration and methodologies
-
----
-
-## 📞 Contact & Support
-
-- 📧 **Issues**: Use GitHub Issues for bug reports
-- 💬 **Discussions**: Use GitHub Discussions for questions
-- 🐦 **Updates**: Follow the project for latest developments
-
----
-
-<div align="center">
-
-**Built with ❤️ for NBA analytics enthusiasts**
-
-*Uncovering the science behind clutch performance*
+- 
 
 </div>
