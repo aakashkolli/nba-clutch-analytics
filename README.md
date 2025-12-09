@@ -1,5 +1,7 @@
 # 🏀 NBA Clutch Analytics Dashboard
 
+Live Demo: https://nbaclutch.streamlit.app/
+
 A comprehensive **Streamlit-powered analytics platform** that analyzes NBA player and team performance in "clutch" situations - the moments when games are decided and legends are made.
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
@@ -227,6 +229,4 @@ This project is licensed under the **MIT License**.
 - **Streamlit** team for the amazing web framework
 - **Plotly** for powerful visualization capabilities
 - **Basketball analytics community** for inspiration and methodologies
-- 
 
-</div>
